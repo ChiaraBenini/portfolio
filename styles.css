@@ -536,6 +536,11 @@ a {
 }
 
 /* Contact Section */
+
+.contact {
+    text-align: center;
+}
+
 .contact-text {
     max-width: 600px;
     margin-bottom: 40px;
@@ -545,10 +550,38 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
     margin-top: 2rem;
 }
 
+#email-button {
+    transition: all 0.3s ease;
+}
+
+.contact-fallback {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+#email-display {
+    color: var(--primary);
+    cursor: pointer;
+    border-bottom: 1px dashed var(--primary);
+    transition: all 0.2s ease;
+}
+
+#email-display:hover {
+    opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-text {
+        max-width: 90%;
+        margin: 0 auto 1.5rem;
+    }
+}
 .contact-btn {
     display: inline-flex;
     align-items: center;
