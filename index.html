@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">    
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -19,11 +18,11 @@
             <a href="#" class="logo">shin</a>
             <div class="nav-links">
                 <a href="#about">About</a>
-                <a href="#experience">Education</a>
+                <a href="#education">Education</a>
                 <a href="#projects">Projects</a>
                 <a href="#contact" class="btn">Contact</a>
             </div>
-            <button class="hamburger">
+            <button class="hamburger" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -63,7 +62,7 @@
                 </div>
                 <div class="about-image">
                     <div class="image-wrapper">
-                        <img src="https://via.placeholder.com/400x400" alt="Shin" class="profile-img">
+                        <img src="https://via.placeholder.com/400x400" alt="Portrait of Shin" class="profile-img" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -71,10 +70,10 @@
     </section>
 
     <!-- Education Section -->
-    <section id="experience" class="section experience">
+    <section id="education" class="section education">
         <div class="container">
             <h2 class="section-title"><span>02.</span> Education</h2>
-            <div class="experience-tabs">
+            <div class="education-tabs">
                 <div class="tab-buttons">
                     <button class="tab-btn active" data-tab="tab1">Bachelor</button>
                     <button class="tab-btn" data-tab="tab2">Pre-Master</button>
@@ -87,7 +86,7 @@
                         <li>Studied cognitive psychology, neuroscience, linguistics, and computer science</li>
                         <li>Focus on interdisciplinary approaches to understanding human cognition</li>
                         <li>Location: Department of Psychology and Cognitive Science in Rovereto</li>
-                        <li><a href="https://corsi.unitn.it/it/scienze-e-tecniche-di-psicologia-cognitiva" target="_blank">Program Website</a></li>
+                        <li><a href="https://corsi.unitn.it/it/scienze-e-tecniche-di-psicologia-cognitiva" target="_blank" rel="noopener noreferrer">Program Website</a></li>
                     </ul>
                 </div>
                 <div class="tab-content" id="tab2">
@@ -97,7 +96,7 @@
                         <li>Bridge program covering foundational AI and computer science topics</li>
                         <li>Preparation for entering the Master's in Intelligent Technology</li>
                         <li>Courses include programming, mathematics, and AI fundamentals</li>
-                        <li><a href="https://www.ru.nl/en/education/pre-masters/pre-masters-artificial-intelligence-intelligent-technology" target="_blank">Program Website</a></li>
+                        <li><a href="https://www.ru.nl/en/education/pre-masters/pre-masters-artificial-intelligence-intelligent-technology" target="_blank" rel="noopener noreferrer">Program Website</a></li>
                     </ul>
                 </div>
                 <div class="tab-content" id="tab3">
@@ -107,30 +106,43 @@
                         <li>Focus on AI techniques for real-world applications in robotics, language, and health</li>
                         <li>Combines machine learning, human-AI interaction, and cognitive models</li>
                         <li>Part of the AI department at Radboud, renowned for interdisciplinary research</li>
-                        <li><a href="https://www.ru.nl/en/education/masters/intelligent-technology" target="_blank">Program Website</a></li>
+                        <li><a href="https://www.ru.nl/en/education/masters/intelligent-technology" target="_blank" rel="noopener noreferrer">Program Website</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-
     <!-- Projects Section -->
-    
     <section id="projects" class="section projects">
-      <div class="container">
-        <h2 class="section-title"><span>03.</span> Projects</h2>
-        
-        <div class="filter-controls">
-          <div class="filter-tags" id="filter-tags">
-            <button class="filter-tag active" data-filter="all">All</button>
-          </div>
+        <div class="container">
+            <h2 class="section-title"><span>03.</span> Projects</h2>
+            
+            <div class="filter-controls">
+                <div class="filter-tags" id="filter-tags">
+                    <button class="filter-tag active" data-filter="all">All</button>
+                </div>
+            </div>
+            
+            <div class="projects-grid" id="projects-grid">
+                <!-- Projects will be inserted here by JavaScript -->
+                <div class="project-card skeleton">
+                    <div class="project-header">
+                        <div class="folder-icon">
+                            <i class="fas fa-folder"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" aria-label="GitHub link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Loading project...</h3>
+                    <p class="project-description">Project details are being loaded</p>
+                    <div class="project-tech">
+                        <div class="tech-tag">Loading</div>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div class="projects-grid" id="projects-grid">
-          <!-- Projects will be inserted here by JavaScript -->
-        </div>
-      </div>
     </section>
 
     <!-- Contact Section -->
@@ -146,10 +158,15 @@
     <footer class="footer">
         <div class="container">
             <div class="social-links">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
             </div>
             <p class="copyright">Designed & Built by Shin</p>
         </div>
