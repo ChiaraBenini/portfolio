@@ -183,34 +183,44 @@ function setupFilterHandlers(projects) {
 // Add this to your script.js
 document.addEventListener('DOMContentLoaded', function() {
     const emailButton = document.getElementById('email-button');
-    const contactAlert = document.getElementById('contact-alert');
+    const emailDisplay = document.getElementById('email-display');
     const email = 'chiara.benini98@gmail.com';
 
     if (emailButton) {
-        emailButton.addEventListener('click', function() {
-            // Try three methods to contact
-            if (navigator.clipboard) {
-                // Modern browsers - copy to clipboard
-                navigator.clipboard.writeText(email).then(() => {
-                    showAlert();
-                }).catch(() => {
-                    fallbackEmail();
-                });
-            } else {
-                // Fallback for older browsers
-                fallbackEmail();
+        emailButton.addEventListener('click', async function() {
+            try {
+                // Try modern clipboard API first
+                await navigator.clipboard.writeText(email);
+                
+                // Visual feedback
+                const originalText = emailButton.innerHTML;
+                emailButton.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                
+                // Revert after 2 seconds
+                setTimeout(() => {
+                    emailButton.innerHTML = originalText;
+                }, 2000);
+                
+            } catch (err) {
+                // Fallback for browsers without clipboard access
+                window.location.href = `mailto:${email}?subject=Contact%20from%20Portfolio`;
             }
         });
 
-        function showAlert() {
-            contactAlert.style.display = 'block';
-            setTimeout(() => {
-                contactAlert.style.display = 'none';
-            }, 3000);
-        }
-
-        function fallbackEmail() {
-            window.location.href = `mailto:${email}?subject=Hello%20from%20your%20portfolio`;
+        // Optional: Add click-to-copy for the email display
+        if (emailDisplay) {
+            emailDisplay.addEventListener('click', async function() {
+                try {
+                    await navigator.clipboard.writeText(email);
+                    const originalText = emailDisplay.textContent;
+                    emailDisplay.textContent = 'Copied!';
+                    setTimeout(() => {
+                        emailDisplay.textContent = originalText;
+                    }, 2000);
+                } catch (err) {
+                    window.location.href = `mailto:${email}?subject=Contact%20from%20Portfolio`;
+                }
+            });
         }
     }
 });
