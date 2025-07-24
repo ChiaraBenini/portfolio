@@ -22,5 +22,31 @@
       "Constraint Propagation": "fas fa-th",
       "Puzzle Generation": "fas fa-puzzle-piece"
     }
+  },
+
+  {
+    "title": "Four in a Row AI Game",
+    "description": "A Python implementation of the classic Four in a Row game featuring an AI opponent using the Minimax algorithm with Alpha-Beta pruning for optimal moves.",
+    "github": "https://github.com/ChiaraBenini/FourInARow",
+    "tags": ["Python", "AI", "Game Development", "Minimax"],
+    "icons": {
+      "Python": "devicon-python-plain",
+      "AI": "fas fa-robot",
+      "Game Development": "fas fa-gamepad",
+      "Minimax": "fas fa-brain"
+    }
+  },
+  {
+    "title": "Frozen Lake RL Solver",
+    "description": "A reinforcement learning solution for OpenAI's FrozenLake environment using Q-Learning, demonstrating fundamental AI concepts in a grid-world navigation challenge.",
+    "github": "https://github.com/ChiaraBenini/FrozenLake",
+    "tags": ["Python", "Reinforcement Learning", "Q-Learning", "OpenAI Gym"],
+    "icons": {
+      "Python": "devicon-python-plain",
+      "Reinforcement Learning": "fas fa-brain",
+      "Q-Learning": "fas fa-project-diagram",
+      "OpenAI Gym": "fas fa-snowflake"
+    }
   }
+
 ]
