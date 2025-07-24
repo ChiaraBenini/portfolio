@@ -178,3 +178,39 @@ function setupFilterHandlers(projects) {
         });
     });
 }
+
+
+// Add this to your script.js
+document.addEventListener('DOMContentLoaded', function() {
+    const emailButton = document.getElementById('email-button');
+    const contactAlert = document.getElementById('contact-alert');
+    const email = 'chiara.benini98@gmail.com';
+
+    if (emailButton) {
+        emailButton.addEventListener('click', function() {
+            // Try three methods to contact
+            if (navigator.clipboard) {
+                // Modern browsers - copy to clipboard
+                navigator.clipboard.writeText(email).then(() => {
+                    showAlert();
+                }).catch(() => {
+                    fallbackEmail();
+                });
+            } else {
+                // Fallback for older browsers
+                fallbackEmail();
+            }
+        });
+
+        function showAlert() {
+            contactAlert.style.display = 'block';
+            setTimeout(() => {
+                contactAlert.style.display = 'none';
+            }, 3000);
+        }
+
+        function fallbackEmail() {
+            window.location.href = `mailto:${email}?subject=Hello%20from%20your%20portfolio`;
+        }
+    }
+});
