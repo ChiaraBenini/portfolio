@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Bayesian Network Variable Elimination",
+    "description": "A Python implementation of the Variable Elimination algorithm for probabilistic inference in Bayesian Networks. Demonstrates efficient computation of marginal probabilities through factor operations.",
+    "tags": ["Python", "Bayesian Networks", "Probabilistic Inference", "AI Algorithms"],
+    "github": "https://github.com/ChiaraBenini/VariableElimination",
+    "icons": {
+      "Python": "devicon-python-plain",
+      "Bayesian Networks": "fas fa-project-diagram",
+      "Probabilistic Inference": "fas fa-calculator",
+      "AI Algorithms": "fas fa-brain"
+    }
+  },
+  {
+    "title": "Sudoku Solver",
+    "description": "A comprehensive Sudoku solver implementing both backtracking and constraint propagation algorithms. Features puzzle generation, difficulty levels, and visualization of the solving process.",
+    "tags": ["Python", "Backtracking", "Constraint Propagation", "Puzzle Generation"],
+    "github": "https://github.com/ChiaraBenini/Sudoku",
+    "icons": {
+      "Python": "devicon-python-plain",
+      "Backtracking": "fas fa-undo-alt",
+      "Constraint Propagation": "fas fa-th",
+      "Puzzle Generation": "fas fa-puzzle-piece"
+    }
+  }
+]

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shin | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">shin</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Education</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact" class="btn">Contact</a>
+            </div>
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">
+                <span class="line">Hi, I'm Shin</span>
+                <span class="line">Full Stack Developer</span>
+            </h1>
+            <p class="hero-subtitle">I build exceptional digital experiences with modern technologies.</p>
+            <a href="#projects" class="btn btn-primary">View my work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title"><span>01.</span> About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I'm Shin, a passionate developer with experience building web applications and solving complex problems with code.</p>
+                    <p>My journey in tech began when I discovered my love for creating things that live on the internet. Since then, I've had the privilege of working at startups and collaborating with talented people to create digital products.</p>
+                    <p>Here are a few technologies I've been working with recently:</p>
+                    <ul class="skills-list">
+                        <li>JavaScript (ES6+)</li>
+                        <li>React</li>
+                        <li>Node.js</li>
+                        <li>Python</li>
+                        <li>TypeScript</li>
+                        <li>MongoDB</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <div class="image-wrapper">
+                        <img src="https://via.placeholder.com/400x400" alt="Shin" class="profile-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="experience" class="section experience">
+        <div class="container">
+            <h2 class="section-title"><span>02.</span> Education</h2>
+            <div class="experience-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="tab1">Bachelor</button>
+                    <button class="tab-btn" data-tab="tab2">Pre-Master</button>
+                    <button class="tab-btn" data-tab="tab3">Master</button>
+                </div>
+                <div class="tab-content active" id="tab1">
+                    <h3>Bachelor in Cognitive Sciences <span>@ University of Trento (Rovereto)</span></h3>
+                    <p class="date">2017 - 2021</p>
+                    <ul>
+                        <li>Studied cognitive psychology, neuroscience, linguistics, and computer science</li>
+                        <li>Focus on interdisciplinary approaches to understanding human cognition</li>
+                        <li>Location: Department of Psychology and Cognitive Science in Rovereto</li>
+                        <li><a href="https://corsi.unitn.it/it/scienze-e-tecniche-di-psicologia-cognitiva" target="_blank">Program Website</a></li>
+                    </ul>
+                </div>
+                <div class="tab-content" id="tab2">
+                    <h3>Pre-Master Intelligent Technology <span>@ Radboud University</span></h3>
+                    <p class="date">2023 - 2025</p>
+                    <ul>
+                        <li>Bridge program covering foundational AI and computer science topics</li>
+                        <li>Preparation for entering the Master's in Intelligent Technology</li>
+                        <li>Courses include programming, mathematics, and AI fundamentals</li>
+                        <li><a href="https://www.ru.nl/en/education/pre-masters/pre-masters-artificial-intelligence-intelligent-technology" target="_blank">Program Website</a></li>
+                    </ul>
+                </div>
+                <div class="tab-content" id="tab3">
+                    <h3>Master in Intelligent Technology <span>@ Radboud University</span></h3>
+                    <p class="date">2025 - Present</p>
+                    <ul>
+                        <li>Focus on AI techniques for real-world applications in robotics, language, and health</li>
+                        <li>Combines machine learning, human-AI interaction, and cognitive models</li>
+                        <li>Part of the AI department at Radboud, renowned for interdisciplinary research</li>
+                        <li><a href="https://www.ru.nl/en/education/masters/intelligent-technology" target="_blank">Program Website</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Projects Section -->
+    
+    <section id="projects" class="section projects">
+      <div class="container">
+        <h2 class="section-title"><span>03.</span> Projects</h2>
+        
+        <div class="filter-controls">
+          <div class="filter-tags" id="filter-tags">
+            <button class="filter-tag active" data-filter="all">All</button>
+          </div>
+        </div>
+        
+        <div class="projects-grid" id="projects-grid">
+          <!-- Projects will be inserted here by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title"><span>04.</span> Get In Touch</h2>
+            <p class="contact-text">I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll do my best to get back to you!</p>
+            <a href="mailto:hello@example.com" class="btn btn-primary">Say Hello</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="copyright">Designed & Built by Shin</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
