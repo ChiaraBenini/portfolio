@@ -199,22 +199,60 @@ a {
     gap: 50px;
 }
 
+.intro-paragraph {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--light);
+}
+
+
 .about-text p {
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.skills-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skills-group {
+    background: var(--dark);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--primary);
+}
+
+.skills-heading {
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-family: var(--font-mono);
 }
 
 .skills-list {
-    display: grid;
+    /*display: grid;
     grid-template-columns: repeat(2, minmax(140px, 200px));
     gap: 10px;
     margin-top: 30px;
-    list-style: none;
+    list-style: none;*/
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
 }
 
 .skills-list li {
     position: relative;
-    padding-left: 20px;
-    font-size: 0.9rem;
+    /*padding-left: 20px;
+    font-size: 0.9rem;*/
+
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 0.95rem;
     color: var(--gray);
 }
 
@@ -223,6 +261,14 @@ a {
     position: absolute;
     left: 0;
     color: var(--primary);
+
+}
+
+.closing-paragraph {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--light);
+    margin-top: 1rem;
 }
 
 .about-image {
@@ -253,6 +299,17 @@ a {
     display: block;
     width: 100%;
     height: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .skills-columns {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills-group {
+        padding: 1.2rem;
+    }
 }
 
 /* Education Section */
