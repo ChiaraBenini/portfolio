@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolutionary SNN Architecture Search</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="project-style.css">
+</head>
+<body>
+
+<div class="project-header">
+    <h1 class="project-title">Evolutionary Neural Architecture Search for Attention-Enabled Spiking Neural Networks</h1>
+    <a class="project-github-link"
+       href="https://github.com/ChiaraBenini/evolutionary-snn-nas"
+       target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-github"></i>
+        github.com/ChiaraBenini/evolutionary-snn-nas
+    </a>
+</div>
+
+<div class="project-body">
+
+    <h2>Overview</h2>
+    <p>
+        This project explores the intersection of neuromorphic computing and automated machine learning by applying
+        evolutionary Neural Architecture Search (NAS) to optimize Spiking Neural Networks (SNNs) with attention mechanisms.
+        SNNs offer significant energy efficiency advantages over traditional neural networks by communicating via discrete
+        spikes rather than continuous activations, making them ideal for low-power edge AI applications.
+    </p>
+    <p>
+        We integrated <strong>Spiking-Efficient Channel Attention (SECA)</strong> layers into a convolutional SNN and applied
+        an evolutionary algorithm to optimize attention placement, simulation time steps, membrane decay, and channel width.
+        Experiments on CIFAR-10 and CIFAR-100 demonstrated that evolutionary NAS identifies competitive architectures while
+        revealing critical trade-offs between accuracy, spiking activity, and computational cost.
+    </p>
+
+    <h2>Technical Background</h2>
+
+    <h3>Spiking Neural Networks</h3>
+    <p>
+        SNNs represent the third generation of neural networks, where neurons communicate via asynchronous binary spikes.
+        The Leaky Integrate-and-Fire (LIF) neuron model serves as the core computational unit:
+    </p>
+    <p class="code-block">
+        V[t] = β V[t-1] + (1-β)I[t] - S[t-1]Vth
+    </p>
+    <p>
+        where β is the membrane decay factor, I[t] is the input current, and S[t-1] indicates a spike at the previous timestep.
+        This event-driven computation enables substantial energy savings on neuromorphic hardware.
+    </p>
+
+    <h3>Attention in SNNs</h3>
+    <p>
+        The SECA layer adapts channel attention mechanisms to operate directly on spike trains, preserving event-driven sparsity.
+        It dynamically recalibrates channel-wise feature responses, allowing the network to focus on informative channels while
+        suppressing redundant ones — crucial for energy-efficient deployment.
+    </p>
+
+    <h2>Implementation</h2>
+
+    <h3>Evolutionary Algorithm</h3>
+    <p>
+        We implemented a population-based evolutionary algorithm with the following parameters:
+    </p>
+    <ul>
+        <li><strong>Population size:</strong> 6 candidates per generation</li>
+        <li><strong>Elite fraction:</strong> 0.33 (top performers preserved)</li>
+        <li><strong>Mutation probability:</strong> 0.1 for random gene mutations</li>
+        <li><strong>Evaluation:</strong> 4 quick-training epochs with subset of data</li>
+    </ul>
+
+    <h3>Search Space</h3>
+    <p>
+        The evolutionary algorithm optimized these discrete parameters:
+    </p>
+    <ul>
+        <li><strong>Attention layers:</strong> Binary presence in 3 residual blocks (7 possible topologies)</li>
+        <li><strong>Time steps:</strong> 8–20 (forward pass duration)</li>
+        <li><strong>Membrane decay (β):</strong> 0.85–0.95 (neuron persistence)</li>
+        <li><strong>Channel width:</strong> 0.5–2.0 (model size multiplier)</li>
+    </ul>
+
+    <h3>Distributed Training</h3>
+    <p>
+        Leveraged PyTorch's DistributedDataParallel for multi-GPU training, significantly reducing experiment time.
+        The implementation required careful handling of membrane potential synchronization across GPUs — a non-trivial
+        engineering challenge unique to SNN training.
+    </p>
+
+    <!-- Add plots here when ready -->
+    <div class="project-img-wrap large">
+        <img src="assets/snn_pic1.png" alt="Accuracy comparison between baseline and evolved models">
+        <span class="project-img-caption">Figure 1 — Training accuracy comparison: baseline vs evolved models on CIFAR-10 and CIFAR-100</span>
+    </div>
+
+    <h2>Key Results</h2>
+
+    <h3>CIFAR-10</h3>
+    <ul>
+        <li><strong>Evolved configuration:</strong> Single attention block, 20 time steps, β=0.92, channel width=1.0</li>
+        <li><strong>Performance:</strong> Comparable accuracy to baseline (~77-78%) with improved stability</li>
+        <li><strong>Efficiency:</strong> Increased time steps improved accuracy but increased epoch time</li>
+    </ul>
+
+    <h3>CIFAR-100</h3>
+    <ul>
+        <li><strong>Evolved configuration:</strong> Two attention blocks, 18 time steps, β=0.9, channel width=0.5</li>
+        <li><strong>Key finding:</strong> 2× reduction in channel width maintained accuracy while significantly reducing spike count</li>
+        <li><strong>Trade-off:</strong> Additional attention block didn't increase sparsity as hypothesized within limited training</li>
+    </ul>
+
+    <h3>Performance Metrics</h3>
+    <ul>
+        <li><strong>Baseline accuracy:</strong> ~77% (CIFAR-10), ~22% (CIFAR-100)</li>
+        <li><strong>Spike count reduction:</strong> Evolved CIFAR-100 model showed ~60% fewer spikes</li>
+        <li><strong>Convergence:</strong> EA identified optimal configurations within 2-3 generations</li>
+    </ul>
+
+
+
+    <div class="project-img-row">
+
+        <img src="assets/snn_spikecount.png" alt="Total spike count comparison">
+        <img src="assets/snn_epochtime.png" alt="Average epoch time comparison">
+    </div>
+
+    <h2>Key Technical Contributions</h2>
+    <ul>
+        <li>Integrated SECA attention mechanism with evolutionary NAS for SNN optimization</li>
+        <li>Implemented distributed multi-GPU training pipeline with state synchronization</li>
+        <li>Discovered meaningful accuracy-efficiency trade-offs: evolved models matched baseline accuracy with reduced channel width</li>
+        <li>Demonstrated feasibility of NAS for discrete-continuous SNN search space</li>
+        <li>Built extensible framework for neuromorphic architecture search</li>
+    </ul>
+
+    <h2>Industry Applications</h2>
+    <p>
+        This work demonstrates skills directly applicable to:
+    </p>
+    <ul>
+        <li><strong>Neuromorphic computing:</strong> Energy-efficient AI for edge devices, IoT, and mobile platforms</li>
+        <li><strong>Automated ML (AutoML):</strong> Neural architecture search for hardware-aware model design</li>
+        <li><strong>Low-power AI:</strong> Optimizing models for deployment on resource-constrained hardware</li>
+        <li><strong>Research engineering:</strong> Building experimental frameworks for neural architecture exploration</li>
+    </ul>
+
+    <h2>Challenges & Learnings</h2>
+    <ul>
+        <li><strong>Multi-GPU synchronization:</strong> Solved membrane potential desynchronization across distributed workers</li>
+        <li><strong>Computational constraints:</strong> Navigated limited HPC cluster availability while maintaining experiment quality</li>
+        <li><strong>Search-efficiency trade-off:</strong> Balanced quick evaluation accuracy against full training fidelity</li>
+        <li><strong>Model simplification:</strong> Adapted state-of-the-art architectures to fit within computational budget while preserving scientific validity</li>
+    </ul>
+
+    <h2>Future Directions</h2>
+    <ul>
+        <li>Expand search space to include attention-specific parameters (kernel size, activation functions)</li>
+        <li>Implement multi-objective optimization balancing accuracy, sparsity, and energy</li>
+        <li>Apply to larger datasets (ImageNet) and more complex SNN architectures</li>
+        <li>Deploy evolved models on actual neuromorphic hardware (Loihi, SpiNNaker)</li>
+    </ul>
+
+</div>
+
+<div class="project-tags">
+    <span class="project-tag"><i class="fab fa-python"></i> Python</span>
+    <span class="project-tag">PyTorch</span>
+    <span class="project-tag">Spiking Neural Networks</span>
+    <span class="project-tag">Neural Architecture Search</span>
+    <span class="project-tag">Evolutionary Algorithms</span>
+    <span class="project-tag">Attention Mechanism</span>
+    <span class="project-tag">Neuromorphic Computing</span>
+    <span class="project-tag">Distributed Training</span>
+    <span class="project-tag">CIFAR-10/100</span>
+</div>
+
+<div style="margin-top: 48px; text-align: center;">
+    <button onclick="window.parent.closeProject()" style="background: none; border: 1px solid var(--primary); color: var(--primary); padding: 8px 20px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.8rem; cursor: pointer;">
+        <i class="fas fa-times"></i> Close
+    </button>
+</div>
+
+</body>
+</html>

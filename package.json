@@ -1,0 +1,20 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "scripts": {
+    "sync-projects": "node sync-projects.js"
+  },
+  "description": "Online CV and Portfolio",
+  "main": "script.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChiaraBenini/portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChiaraBenini/portfolio/issues"
+  },
+  "homepage": "https://github.com/ChiaraBenini/portfolio#readme"
+}

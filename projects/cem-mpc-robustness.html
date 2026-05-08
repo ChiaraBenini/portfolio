@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEM-MPC Robustness Analysis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="project-style.css">
+</head>
+<body>
+
+<div class="project-header">
+    <h1 class="project-title">Robustness of Sampling-Based Model Predictive Control Under Model Mismatch</h1>
+    <a class="project-github-link"
+       href="https://github.com/ChiaraBenini/control-cem-mpc-robustness"
+       target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-github"></i>
+        github.com/ChiaraBenini/control-cem-mpc-robustness
+    </a>
+</div>
+
+<div class="project-body">
+
+    <h2>Overview</h2>
+    <p>
+        This project systematically evaluates the robustness of sampling-based Model Predictive Control
+        (MPC) using the Cross-Entropy Method (CEM) for nonlinear control tasks. Using pendulum swing-up
+        as a benchmark, I analyzed how parametric mismatches and sensor noise degrade controller performance,
+        identifying critical failure thresholds and providing practical design guidance for real-world deployment.
+    </p>
+
+    <h2>Key Technical Contributions</h2>
+    <ul>
+        <li>Implemented phase-aware CEM-MPC with adaptive horizon (60 steps swing-up / 30 steps stabilization)</li>
+        <li>Built modular JAX-based simulation framework for systematic robustness testing (30 trials per condition)</li>
+        <li>Quantified sensitivity to mass, length, and damping mismatches (30+ parameter combinations)</li>
+        <li>Analyzed observation vs process noise effects (Gaussian, 8+ noise levels each)</li>
+        <li>Developed normalized cross-dimensional sensitivity metric for comparing different uncertainty types</li>
+    </ul>
+
+    <h2>Core Results</h2>
+
+
+    <div class="project-img-wrap medium">
+        <img src="assets/cem_mass_mismatch.png" alt="Mass mismatch success rates from 1.5× to 2.5×">
+        <span class="project-img-caption">Mass mismatch: 100% success up to 2.0×, collapses at 2.25×</span>
+    </div>
+    <div class="project-img-wrap medium">
+        <img src="assets/cem_lenght_miismatch.png" alt="Length mismatch success rates from 1.1× to 2.0×">
+        <span class="project-img-caption">Length mismatch: drops to 56.7% at 1.5×, fails completely at 1.75× — most sensitive parameter</span>
+    </div>
+
+
+    <div class="project-img-wrap medium">
+        <img src="assets/cem_damping_mismatch.png" alt="Damping mismatch success rates from 1× to 300×">
+        <span class="project-img-caption">Damping mismatch: 100% success up to 50×, partial success (60%) at 100× — remarkably robust</span>
+    </div>
+
+    <h3>Parameter Mismatch Sensitivity</h3>
+    <ul>
+        <li><strong>Length:</strong> Most critical — fails at 1.5× mismatch (56.7% success)</li>
+        <li><strong>Mass:</strong> Moderate tolerance — maintains 100% success up to 2.0×</li>
+        <li><strong>Damping:</strong> Highly robust — 100% success up to 50×, partial success to 100×</li>
+    </ul>
+
+    <div class="project-img-wrap large">
+        <img src="assets/cem_noise.png" alt="Noise comparison across observation, process, and combined noise types">
+        <span class="project-img-caption">Noise sensitivity comparison: observation noise fails at ~3.2% of operational range, process noise at ~11% of control authority. Combined noise shows earlier, more severe degradation due to non-linear interactions.</span>
+    </div>
+
+    <h3>Noise Sensitivity</h3>
+    <ul>
+        <li><strong>Observation noise:</strong> Sharp threshold at σθ ≈ 0.10 rad (~3.2% of half-circle)</li>
+        <li><strong>Process noise:</strong> Maintains 100% success up to 0.90 N·m, fails at 1.10 N·m (~11% of control authority)</li>
+        <li><strong>Combined noise:</strong> Synergistic failure — 23.3% success at moderate levels</li>
+    </ul>
+
+    <h3>Stress Test (Combined Mismatch + Noise)</h3>
+    <ul>
+        <li>Overall success rate: 39.3% under realistic uncertainty</li>
+        <li>Stabilization time increased 5× (44.7 → 229.6 steps)</li>
+        <li>Length mismatch confirmed as dominant failure factor</li>
+    </ul>
+
+    <h2>Recommended Visuals</h2>
+    <p>
+        From your existing code, prioritize these 3 plots for the portfolio page:
+    </p>
+
+    <!-- Plot 1: Success Rate vs Noise Magnitude (shows threshold behavior) -->
+    <!-- <div class="project-img-wrap medium">
+        <img src="assets/cem-mpc/noise-comparison.png" alt="Success rate vs noise magnitude for observation, process, and combined noise">
+        <span class="project-img-caption">Figure 1 — Success rate degradation across noise types. Observation noise shows sharp threshold (~0.10 rad), process noise fails later (~1.10 N·m), combined noise creates synergistic collapse.</span>
+    </div> -->
+
+    <!-- Plot 2: Parameter Mismatch Success Rates -->
+    <!-- <div class="project-img-wrap medium">
+        <img src="assets/cem-mpc/mismatch-results.png" alt="Success rates for mass, length, and damping mismatch ratios">
+        <span class="project-img-caption">Figure 2 — Parameter sensitivity comparison. Length is most critical (fails at 1.5×), mass tolerates 2.0×, damping handles 50× mismatch before degradation.</span>
+    </div> -->
+
+    <!-- Plot 3: Angle trajectories for best vs worst conditions -->
+    <!-- <div class="project-img-wrap medium">
+        <img src="assets/cem-mpc/trajectories.png" alt="Angle trajectories comparing low and high noise conditions">
+        <span class="project-img-caption">Figure 3 — Angle trajectories under increasing uncertainty. Clean baseline (top) vs moderate noise (middle) vs stress test (bottom) showing progressive degradation.</span>
+    </div> -->
+
+    <h2>Practical Design Guidance</h2>
+    <ul>
+        <li><strong>Prioritize length estimation</strong> — most sensitive parameter (fails at 50% overestimate)</li>
+        <li><strong>Angle sensors need precision &lt; 0.05 rad</strong> — observation noise 3-4× more critical than process noise</li>
+        <li><strong>Expect "reality gap" cost</strong> — robust operation demands 3-5× longer stabilization time</li>
+        <li><strong>Test combined uncertainties</strong> — isolated tests miss synergistic failures</li>
+    </ul>
+
+    <h2>Technical Stack</h2>
+    <ul>
+        <li><strong>JAX:</strong> GPU-accelerated dynamics and CEM optimization</li>
+        <li><strong>Runge-Kutta 4:</strong> Numerical integration for pendulum dynamics</li>
+        <li><strong>Cross-Entropy Method:</strong> Derivative-free trajectory optimization</li>
+        <li><strong>Phase-aware architecture:</strong> Adaptive horizon and cost function switching</li>
+    </ul>
+
+    <h2>Industry Applications</h2>
+    <p>
+        This work demonstrates skills directly applicable to:
+    </p>
+    <ul>
+        <li><strong>Robust control systems:</strong> Safety-critical applications (autonomous vehicles, industrial automation)</li>
+        <li><strong>Model-based RL/control:</strong> System identification and uncertainty quantification</li>
+        <li><strong>Validation & testing:</strong> Systematic robustness evaluation for deployed controllers</li>
+        <li><strong>Simulation engineering:</strong> Building modular testing frameworks for control algorithms</li>
+    </ul>
+
+</div>
+
+<div class="project-tags">
+    <span class="project-tag"><i class="fab fa-python"></i> Python</span>
+    <span class="project-tag">JAX</span>
+    <span class="project-tag">Model Predictive Control</span>
+    <span class="project-tag">Cross-Entropy Method</span>
+    <span class="project-tag">Robust Control</span>
+    <span class="project-tag">Nonlinear Control</span>
+    <span class="project-tag">System Identification</span>
+    <span class="project-tag">Uncertainty Quantification</span>
+</div>
+
+<div style="margin-top: 48px; text-align: center;">
+    <button onclick="window.parent.closeProject()" style="background: none; border: 1px solid var(--primary); color: var(--primary); padding: 8px 20px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.8rem; cursor: pointer;">
+        <i class="fas fa-times"></i> Close
+    </button>
+</div>
+
+</body>
+</html>

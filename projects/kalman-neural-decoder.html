@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalman Neural Decoder – Brain-Machine Interface</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="project-style.css">
+</head>
+<body>
+
+<div class="project-header">
+    <h1 class="project-title">Kalman Neural Decoder</h1>
+    <a class="project-github-link"
+       href="https://github.com/ChiaraBenini/kalman-neural-decoder"
+       target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-github"></i>
+        github.com/ChiaraBenini/kalman-neural-decoder
+    </a>
+</div>
+
+<div class="project-body">
+
+    <h2>Overview</h2>
+    <p>
+        This project implements a Kalman filter-based decoder for brain-machine interfaces (BMI),
+        translating neural firing patterns into kinematic states (position and velocity). The decoder
+        learns the relationship between neural activity and movement from training data, then
+        reconstructs intended movements from test neural recordings in real time.
+    </p>
+    <p>
+        Built with <strong>JAX</strong> for high-performance array operations and automatic differentiation,
+        this implementation demonstrates core principles of neural decoding: state estimation,
+        uncertainty quantification, and real-time inference.
+    </p>
+
+    <div class="project-img-wrap large">
+        <img src="assets/kalman_pic1.png" alt="True vs Decoded kinematics comparison for position and velocity">
+        <span class="project-img-caption">Figure 1 — Decoding performance across 100 time steps. Solid lines show true kinematics, dashed lines show Kalman filter estimates. Position variables (top two panels) show near-perfect tracking, while velocity variables (bottom two panels) exhibit expected noisier reconstruction.</span>
+    </div>
+
+    <h2>Technical Implementation</h2>
+    <p>
+        The Kalman filter models the brain-movement relationship as a linear dynamical system:
+    </p>
+    <ul>
+        <li><strong>State transition (A):</strong> How kinematics evolve over time (position + velocity dynamics)</li>
+        <li><strong>Observation mapping (H):</strong> How neural firing rates relate to kinematic variables</li>
+        <li><strong>Process noise (W):</strong> Uncertainty in the movement model</li>
+        <li><strong>Observation noise (Q):</strong> Noise in neural recordings</li>
+    </ul>
+    <p>
+        All parameters are learned from training data using least squares estimation, then applied
+        recursively to decode test data. The filter balances prior predictions with new observations
+        through the Kalman gain, which adapts over time as uncertainty decreases.
+    </p>
+
+    <h2>Key Results</h2>
+
+    <h3>Decoding Performance (R² scores)</h3>
+    <ul>
+        <li><strong>Position decoding:</strong> 89% (x-axis), 91% (y-axis)</li>
+        <li><strong>Velocity decoding:</strong> 68% (x-axis), 63% (y-axis)</li>
+    </ul>
+    <p>
+        Position variables achieved significantly higher accuracy than velocity, consistent with
+        known neural encoding properties — position is more robustly represented in neural populations,
+        while velocity signals are noisier and harder to reconstruct.
+    </p>
+
+    <div class="project-img-wrap medium">
+        <img src="assets/kalman_pic2.png" alt="Kalman gain stabilization over time for each kinematic variable">
+        <span class="project-img-caption">Figure 2 — Kalman gain evolution across the first 100 time steps. Gains stabilize within 15–20 steps as uncertainty decreases. Sign differences reflect directional tuning preferences of individual neurons.</span>
+    </div>
+
+    <h3>Kalman Gain Dynamics</h3>
+    <p>
+        The Kalman gain stabilizes within 15–20 time steps, after which the filter reaches steady-state
+        performance. The sign of each gain reflects directional tuning preferences of individual neurons:
+        positive contributions from neurons that increase firing for specific movement directions, negative
+        from those with opposite tuning.
+    </p>
+
+    <h3>Initialization Sensitivity Analysis</h3>
+    <p>
+        Systematic testing of initial state (x₀) and covariance (P₀) revealed critical insights for
+        real-world BMI deployment:
+    </p>
+    <ul>
+        <li><strong>High initial covariance (P₀=1000):</strong> Fast adaptation to incorrect initial states, ideal when starting conditions are unknown</li>
+        <li><strong>Low initial covariance (P₀=0.01):</strong> Slower but more stable convergence, better when initial estimates are reliable</li>
+        <li><strong>Worst-case scenario:</strong> Confidently wrong initialization (incorrect x₀ + low P₀) causes prolonged poor performance</li>
+    </ul>
+
+    <h2>Technical Stack</h2>
+    <ul>
+        <li><strong>JAX:</strong> GPU-accelerated numerical computing with automatic differentiation</li>
+        <li><strong>NumPy/SciPy:</strong> Data loading and preprocessing</li>
+        <li><strong>Matplotlib:</strong> Visualization and performance analysis</li>
+        <li><strong>Dataclasses:</strong> Clean, maintainable configuration management</li>
+    </ul>
+
+    <h2>Industry Applications</h2>
+    <p>
+        This implementation demonstrates skills directly applicable to:
+    </p>
+    <ul>
+        <li><strong>Brain-Machine Interfaces:</strong> Real-time neural decoding for prosthetic control</li>
+        <li><strong>State Estimation:</strong> Sensor fusion, tracking systems, and autonomous systems</li>
+        <li><strong>Time Series Analysis:</strong> Sequential data processing with uncertainty quantification</li>
+        <li><strong>Biomedical Signal Processing:</strong> Neural data analysis and interpretation</li>
+    </ul>
+
+    <h2>Key Takeaways</h2>
+    <ul>
+        <li>Built a complete Kalman filter pipeline from first principles using JAX</li>
+        <li>Analyzed parameter sensitivity and convergence properties systematically</li>
+        <li>Achieved 89–91% reconstruction accuracy for position variables</li>
+        <li>Interpreted neural tuning properties through Kalman gain analysis</li>
+    </ul>
+</div>
+
+<div class="project-tags">
+    <span class="project-tag"><i class="fab fa-python"></i> Python</span>
+    <span class="project-tag">JAX</span>
+    <span class="project-tag">Kalman Filter</span>
+    <span class="project-tag">Brain-Machine Interface</span>
+    <span class="project-tag">State Estimation</span>
+    <span class="project-tag">Neural Decoding</span>
+    <span class="project-tag">Signal Processing</span>
+    <span class="project-tag">Time Series</span>
+    <span class="project-tag">Linear Dynamical Systems</span>
+</div>
+
+<div style="margin-top: 48px; text-align: center;">
+    <button onclick="window.parent.closeProject()" style="background: none; border: 1px solid var(--primary); color: var(--primary); padding: 8px 20px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.8rem; cursor: pointer;">
+        <i class="fas fa-times"></i> Close
+    </button>
+</div>
+
+</body>
+</html>

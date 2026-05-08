@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reinforcement Learning – FrozenLake</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="project-style.css">
+</head>
+<body>
+
+<div class="project-header">
+    <h1 class="project-title">Reinforcement Learning – FrozenLake</h1>
+    <a class="project-github-link"
+       href="https://github.com/ChiaraBenini/reinforcement-learning-frozenlake"
+       target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-github"></i>
+        github.com/ChiaraBenini/reinforcement-learning-frozenlake
+    </a>
+</div>
+
+<div class="project-body">
+    <h2>Overview</h2>
+    <p>
+        This project implements multiple reinforcement learning algorithms to solve the FrozenLake
+        environment from Gymnasium. The agent must navigate across a frozen lake from start to goal
+        while avoiding holes, learning optimal policies through trial and error.
+    </p>
+
+    <h2>Key Implementations</h2>
+    <ul>
+        <li><strong>Dynamic Programming</strong> - Policy Iteration and Value Iteration for solving MDPs with full environment knowledge</li>
+        <li><strong>Monte Carlo Methods</strong> - First-visit and every-visit MC prediction with exploring starts</li>
+        <li><strong>Temporal Difference Learning</strong> - SARSA (on-policy) and Q-Learning (off-policy) implementations</li>
+        <li><strong>Performance Comparison</strong> - Analysis of convergence rates across different algorithms</li>
+    </ul>
+
+    <h2>Technical Details</h2>
+    <p>
+        The FrozenLake environment (4x4 and 8x8 variants) presents a classic challenge in reinforcement
+        learning: sparse rewards, stochastic transitions (slippery ice), and a clear goal condition.
+        Key implementation challenges included:
+    </p>
+    <ul>
+        <li>Handling the environment's non-deterministic dynamics (33% chance of slipping)</li>
+        <li>Implementing proper exploration-exploitation trade-offs</li>
+        <li>Tracking convergence metrics across multiple episodes</li>
+        <li>Visualizing learned policies and value functions</li>
+    </ul>
+
+    <h2>Results</h2>
+    <p>
+        Q-Learning achieved the most stable convergence, reaching ~80% success rate on the 4x4 map
+        after 2000 episodes. The dynamic programming methods quickly found optimal policies when
+        the transition dynamics were known, while Monte Carlo methods required more episodes but
+        effectively learned without a model.
+    </p>
+
+    <h2>Key Takeaways</h2>
+    <ul>
+        <li>Model-based methods (DP) converge faster but require environment dynamics knowledge</li>
+        <li>Q-Learning's off-policy nature makes it more sample-efficient than on-policy SARSA</li>
+        <li>Visualizing value iteration convergence helps debug agent learning progress</li>
+        <li>The stochastic environment makes deterministic policies less reliable</li>
+    </ul>
+</div>
+
+<div class="project-tags">
+    <span class="project-tag"><i class="fab fa-python"></i> Python</span>
+    <span class="project-tag">Reinforcement Learning</span>
+    <span class="project-tag">Q-Learning</span>
+    <span class="project-tag">Dynamic Programming</span>
+    <span class="project-tag">Monte Carlo</span>
+    <span class="project-tag">SARSA</span>
+    <span class="project-tag">Gymnasium</span>
+    <span class="project-tag">OpenAI Gym</span>
+</div>
+
+<!-- Optional: Add a close button that calls parent window's close function -->
+<div style="margin-top: 48px; text-align: center;">
+    <button onclick="window.parent.closeProject()" style="background: none; border: 1px solid var(--primary); color: var(--primary); padding: 8px 20px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.8rem; cursor: pointer;">
+        <i class="fas fa-times"></i> Close
+    </button>
+</div>
+
+</body>
+</html>
