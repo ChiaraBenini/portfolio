@@ -1,0 +1,535 @@
+[
+  {
+    "id": 1232299183,
+    "title": "reinforcement learning frozenlake",
+    "description": "Reinforcement learning methods applied for navigation",
+    "github": "https://github.com/ChiaraBenini/reinforcement-learning-frozenlake",
+    "tags": [
+      "Jupyter Notebook",
+      "dynamic-programming",
+      "gymnasium",
+      "machine-learning",
+      "markov-decision-process",
+      "monte-carlo"
+    ],
+    "icons": {
+      "Jupyter Notebook": "fas fa-code",
+      "dynamic-programming": "fas fa-code",
+      "gymnasium": "fas fa-code",
+      "machine-learning": "fas fa-code",
+      "markov-decision-process": "fas fa-code",
+      "monte-carlo": "fas fa-code",
+      "policy-iteration": "fas fa-code",
+      "q-learning": "fas fa-code",
+      "reinforcement-learning": "fas fa-code",
+      "sarsa": "fas fa-code",
+      "temporal-difference-learning": "fas fa-code",
+      "value-iteration": "fas fa-code"
+    },
+    "updated_at": "2026-05-07T19:47:08Z",
+    "stars": 0,
+    "forks": 0,
+    "hidden": false,
+    "order": 999,
+    "synced_at": "2026-05-07T19:54:23.248Z"
+  },
+  {
+    "id": 1232294614,
+    "title": "dl",
+    "description": "No description available",
+    "github": "https://github.com/ChiaraBenini/dl",
+    "tags": [
+      "Jupyter Notebook"
+    ],
+    "icons": {
+      "Jupyter Notebook": "fas fa-code"
+    },
+    "updated_at": "2026-05-07T19:37:45Z",
+    "stars": 0,
+    "forks": 0,
+    "hidden": false,
+    "order": 999,
+    "synced_at": "2026-05-07T19:54:23.249Z"
+  },
+  {
+    "id": 1232289387,
+    "title": "dl diffusion models",
+    "description": "Practicing deep learning ",
+    "github": "https://github.com/ChiaraBenini/dl-diffusion-models",
+    "tags": [
+      "Jupyter Notebook",
+      "classifier-guidance",
+      "deep-learning",
+      "diffusion-models",
+      "generative-ai",
+      "machine-learning"
+    ],
+    "icons": {
+      "Jupyter Notebook": "fas fa-code",
+      "classifier-guidance": "fas fa-code",
+      "deep-learning": "fas fa-code",
+      "diffusion-models": "fas fa-code",
+      "generative-ai": "fas fa-code",
+      "machine-learning": "fas fa-code",
+      "neural-network": "fas fa-code",
+      "pytorch": "fas fa-code",
+      "score-based-models": "fas fa-code",
+      "stochastic-differential-equations": "fas fa-code",
+      "time-series": "fas fa-code",
+      "vp-sde": "fas fa-code"
+    },
+    "updated_at": "2026-05-07T19:34:31Z",
+    "stars": 0,
+    "forks": 0,
+    "hidden": false,
+    "order": 999,
+    "synced_at": "2026-05-07T19:54:23.249Z"
+  },
+  {
+    "id": 1232273721,
+    "title": "dynamical systems neural models",
+    "description": "Building up skills for Neural Computing (assignments)",
+    "github": "https://github.com/ChiaraBenini/dynamical-systems-neural-models",
+    "tags": [
+      "Jupyter Notebook",
+      "adaptive-exponential-neuron",
+      "adex-model",
+      "computational-neuroscience",
+      "dynamical-systems",
+      "julia"
+    ],
+    "icons": {
+      "Jupyter Notebook": "fas fa-code",
+      "adaptive-exponential-neuron": "fas fa-code",
+      "adex-model": "fas fa-code",
+      "computational-neuroscience": "fas fa-code",
+      "dynamical-systems": "fas fa-code",
+      "julia": "fas fa-code",
+      "neural-models": "fas fa-code",
+      "numerical-methods": "fas fa-code",
+      "phase-plane": "fas fa-code",
+      "scientific-computing": "fas fa-code",
+      "short-term-plasticity": "fas fa-code",
+      "synaptic-transmission": "fas fa-code",
+      "wilson-cowan": "fas fa-code"
+    },
+    "updated_at": "2026-05-07T19:25:25Z",
+    "stars": 0,
+    "forks": 0,
+    "hidden": false,
+    "order": 999,
+    "synced_at": "2026-05-07T19:54:23.249Z"
+  },
+  {
+    "id": 1232268972,
+    "title": "nengo cognitive robot",
+    "description": "Cognitive inspired Nengo simulation ",
+    "github": "https://github.com/ChiaraBenini/nengo-cognitive-robot",
+    "tags": [
+      "Python",
+      "biologically-plausible",
+      "cognitive-robotics",
+      "color-vision",
+      "intrinsic-motivation",
+      "nengo"
+    ],
+    "icons": {
+      "Python": "fab fa-python",
+      "biologically-plausible": "fas fa-code",
+      "cognitive-robotics": "fas fa-code",
+      "color-vision": "fas fa-code",
+      "intrinsic-motivation": "fas fa-code",
+      "nengo": "fas fa-code",
+      "neural-engineering-framework": "fas fa-code",
+      "neuromorphic-computing": "fas fa-code",
+      "population-coding": "fas fa-code",
+      "sensorimotor-integration": "fas fa-code",
+      "working-memory": "fas fa-code"
+    },
+    "updated_at": "2026-05-07T19:04:48Z",
+    "stars": 0,
+    "forks": 0,
+    "hidden": false,
+    "order": 999,
+    "synced_at": "2026-05-07T19:54:23.249Z"
+  },
+  {
+    "id": 1232264567,
+    "title": "kalman neural decoder",
+    "description": "State estimation through Kalman filter",
+    "github": "https://github.com/ChiaraBenini/kalman-neural-decoder",
+    "tags": [
+      "Jupyter Notebook",
+      "brain-machine-interface",
+      "jax",
+      "kalman-filter",
+      "linear-dynamical-systems",
+      "matplotlib"
+    ],
+    "icons": {
+      "Jupyter Notebook": "fas fa-code",
+      "brain-machine-interface": "fas fa-code",
+      "jax": "fas fa-code",
+      "kalman-filter": "fas fa-code",
+      "linear-dynamical-systems": "fas fa-code",
+      "matplotlib": "fas fa-code",
+      "neural-decoding": "fas fa-code",
+      "scipy": "fas fa-code",
+      "signal-processing": "fas fa-code",
+      "state-estimation": "fas fa-code",
+      "time-series-analysis": "fas fa-code"
+    },
+    "updated_at": "2026-05-07T18:57:41Z",
+    "stars": 0,
+    "forks": 0,
+    "hidden": false,
+    "order": 999,
+    "synced_at": "2026-05-07T19:54:23.249Z"
+  },
+  {
+    "id": 1232254610,
+    "title": "evolutionary snn nas",
+    "description": "Research project exploring evolutionary Neural Architecture Search (NAS) for optimizing attention-enabled Spiking Neural Networks (SNNs)",
+    "github": "https://github.com/ChiaraBenini/evolutionary-snn-nas",
+    "tags": [
+      "Python",
+      "attention-mechanism",
+      "cifar10",
+      "deep-learning",
+      "distributed-training",
+      "evolutionary-algorithms"
+    ],
+    "icons": {
+      "Python": "fab fa-python",
+      "attention-mechanism": "fas fa-code",
+      "cifar10": "fas fa-code",
+      "deep-learning": "fas fa-code",
+      "distributed-training": "fas fa-code",
+      "evolutionary-algorithms": "fas fa-code",
+      "machine-learning": "fas fa-code",
+      "neural-architecture-search": "fas fa-code",
+      "neuromorphic-computing": "fas fa-code",
+      "pytorch": "fas fa-code",
+      "spiking-neural-networks": "fas fa-code"
+    },
+    "updated_at": "2026-05-07T18:50:57Z",
+    "stars": 0,
+    "forks": 0,
+    "hidden": false,
+    "order": 999,
+    "synced_at": "2026-05-07T19:54:23.249Z"
+  },
+  {
+    "id": 1232248943,
+    "title": "control cem mpc robustness",
+    "description": "How robust is CEM-MPC under model mismatch?",
+    "github": "https://github.com/ChiaraBenini/control-cem-mpc-robustness",
+    "tags": [
+      "Jupyter Notebook",
+      "cem",
+      "control-theory",
+      "jax",
+      "machine-learning",
+      "model-predictive-control"
+    ],
+    "icons": {
+      "Jupyter Notebook": "fas fa-code",
+      "cem": "fas fa-code",
+      "control-theory": "fas fa-code",
+      "jax": "fas fa-code",
+      "machine-learning": "fas fa-code",
+      "model-predictive-control": "fas fa-code",
+      "nonlinear-control": "fas fa-code",
+      "optimization": "fas fa-code",
+      "python": "fas fa-code",
+      "robotics": "fas fa-code",
+      "scientific-computing": "fas fa-code"
+    },
+    "updated_at": "2026-05-07T18:37:59Z",
+    "stars": 0,
+    "forks": 0,
+    "hidden": false,
+    "order": 999,
+    "synced_at": "2026-05-07T19:54:23.249Z"
+  },
+  {
+    "id": 1209314832,
+    "title": "AML Project",
+    "description": "Shared code and documents for the AML project 2026",
+    "github": "https://github.com/ChiaraBenini/AML-Project",
+    "tags": [
+      "Jupyter Notebook"
+    ],
+    "icons": {
+      "Jupyter Notebook": "fas fa-code"
+    },
+    "updated_at": "2026-05-03T16:57:54Z",
+    "stars": 0,
+    "forks": 0,
+    "hidden": false,
+    "order": 999,
+    "synced_at": "2026-05-07T19:54:23.249Z"
+  },
+  {
+    "id": 1025578029,
+    "title": "portfolio",
+    "description": "No description available",
+    "github": "https://github.com/ChiaraBenini/portfolio",
+    "tags": [
+      "CSS"
+    ],
+    "icons": {
+      "CSS": "fab fa-css3-alt"
+    },
+    "updated_at": "2025-07-24T14:43:43Z",
+    "stars": 0,
+    "forks": 0,
+    "hidden": false,
+    "order": 999,
+    "synced_at": "2026-05-07T19:54:23.249Z"
+  },
+  {
+    "id": 1019632401,
+    "title": "portfolio template",
+    "description": "Online CV and Portfolio",
+    "github": "https://github.com/ChiaraBenini/portfolio-template",
+    "tags": [
+      "CSS"
+    ],
+    "icons": {
+      "CSS": "fab fa-css3-alt"
+    },
+    "updated_at": "2025-07-24T14:42:49Z",
+    "stars": 0,
+    "forks": 0,
+    "hidden": false,
+    "order": 999,
+    "synced_at": "2026-05-07T19:54:23.249Z"
+  },
+  {
+    "id": 1025585739,
+    "title": "FrozenLake",
+    "description": "Reinforcement Learning Assignement",
+    "github": "https://github.com/ChiaraBenini/FrozenLake",
+    "tags": [
+      "Jupyter Notebook"
+    ],
+    "icons": {
+      "Jupyter Notebook": "fas fa-code"
+    },
+    "updated_at": "2025-07-24T13:34:19Z",
+    "stars": 0,
+    "forks": 0,
+    "hidden": false,
+    "order": 999,
+    "synced_at": "2026-05-07T19:54:23.249Z"
+  },
+  {
+    "id": 1024201679,
+    "title": "VariableElimination",
+    "description": "AIPT Assignment, solving problems with variable elimination algorithm",
+    "github": "https://github.com/ChiaraBenini/VariableElimination",
+    "tags": [
+      "Python"
+    ],
+    "icons": {
+      "Python": "fab fa-python"
+    },
+    "updated_at": "2025-07-22T10:34:45Z",
+    "stars": 0,
+    "forks": 0,
+    "hidden": false,
+    "order": 999,
+    "synced_at": "2026-05-07T19:54:23.249Z"
+  },
+  {
+    "id": 1024198893,
+    "title": "Sudoku",
+    "description": "AIPT Assignment, solving Sudoku with AC-3 Algorithm",
+    "github": "https://github.com/ChiaraBenini/Sudoku",
+    "tags": [
+      "Python"
+    ],
+    "icons": {
+      "Python": "fab fa-python"
+    },
+    "updated_at": "2025-07-22T10:31:01Z",
+    "stars": 0,
+    "forks": 0,
+    "hidden": false,
+    "order": 999,
+    "synced_at": "2026-05-07T19:54:23.249Z"
+  },
+  {
+    "id": 1024194264,
+    "title": "porrtfolio1",
+    "description": "No description available",
+    "github": "https://github.com/ChiaraBenini/porrtfolio1",
+    "tags": [
+      "CSS"
+    ],
+    "icons": {
+      "CSS": "fab fa-css3-alt"
+    },
+    "updated_at": "2025-07-22T10:22:07Z",
+    "stars": 0,
+    "forks": 0,
+    "hidden": false,
+    "order": 999,
+    "synced_at": "2026-05-07T19:54:23.249Z"
+  },
+  {
+    "id": 1024178084,
+    "title": "FourInARow",
+    "description": "AIPT Assignment, solving Four in a Row with Alpha-Beta and Monte Carlo",
+    "github": "https://github.com/ChiaraBenini/FourInARow",
+    "tags": [
+      "Python"
+    ],
+    "icons": {
+      "Python": "fab fa-python"
+    },
+    "updated_at": "2025-07-22T09:54:26Z",
+    "stars": 0,
+    "forks": 0,
+    "hidden": false,
+    "order": 999,
+    "synced_at": "2026-05-07T19:54:23.249Z"
+  },
+  {
+    "id": 1023594121,
+    "title": "my portfolio",
+    "description": "No description available",
+    "github": "https://github.com/ChiaraBenini/my-portfolio",
+    "tags": [
+      "JavaScript"
+    ],
+    "icons": {
+      "JavaScript": "fab fa-js"
+    },
+    "updated_at": "2025-07-21T11:57:33Z",
+    "stars": 0,
+    "forks": 0,
+    "hidden": false,
+    "order": 999,
+    "synced_at": "2026-05-07T19:54:23.249Z"
+  },
+  {
+    "id": 603773542,
+    "title": "MWS temp",
+    "description": "No description available",
+    "github": "https://github.com/ChiaraBenini/MWS-temp",
+    "tags": [
+      "HTML"
+    ],
+    "icons": {
+      "HTML": "fab fa-html5"
+    },
+    "updated_at": "2023-02-19T14:38:44Z",
+    "stars": 0,
+    "forks": 0,
+    "hidden": false,
+    "order": 999,
+    "synced_at": "2026-05-07T19:54:23.249Z"
+  },
+  {
+    "id": 603771058,
+    "title": "Temporary Website",
+    "description": "No description available",
+    "github": "https://github.com/ChiaraBenini/Temporary-Website",
+    "tags": [
+      "HTML"
+    ],
+    "icons": {
+      "HTML": "fab fa-html5"
+    },
+    "updated_at": "2023-02-19T14:30:59Z",
+    "stars": 0,
+    "forks": 0,
+    "hidden": false,
+    "order": 999,
+    "synced_at": "2026-05-07T19:54:23.249Z"
+  },
+  {
+    "id": 603767106,
+    "title": "My Site temporary ",
+    "description": "using only html and css",
+    "github": "https://github.com/ChiaraBenini/My-Site-temporary-",
+    "tags": [],
+    "icons": {},
+    "updated_at": "2023-02-19T14:18:06Z",
+    "stars": 0,
+    "forks": 0,
+    "hidden": false,
+    "order": 999,
+    "synced_at": "2026-05-07T19:54:23.249Z"
+  },
+  {
+    "title": "Bayesian Network Variable Elimination",
+    "description": "A Python implementation of the Variable Elimination algorithm for probabilistic inference in Bayesian Networks. Demonstrates efficient computation of marginal probabilities through factor operations.",
+    "tags": [
+      "Python",
+      "Bayesian Networks",
+      "Probabilistic Inference",
+      "AI Algorithms"
+    ],
+    "github": "https://github.com/ChiaraBenini/VariableElimination",
+    "icons": {
+      "Python": "devicon-python-plain",
+      "Bayesian Networks": "fas fa-project-diagram",
+      "Probabilistic Inference": "fas fa-calculator",
+      "AI Algorithms": "fas fa-brain"
+    }
+  },
+  {
+    "title": "Sudoku Solver",
+    "description": "A comprehensive Sudoku solver implementing both backtracking and constraint propagation algorithms. Features puzzle generation, difficulty levels, and visualization of the solving process.",
+    "tags": [
+      "Python",
+      "Backtracking",
+      "Constraint Propagation",
+      "Puzzle Generation"
+    ],
+    "github": "https://github.com/ChiaraBenini/Sudoku",
+    "icons": {
+      "Python": "devicon-python-plain",
+      "Backtracking": "fas fa-undo-alt",
+      "Constraint Propagation": "fas fa-th",
+      "Puzzle Generation": "fas fa-puzzle-piece"
+    }
+  },
+  {
+    "title": "Four in a Row AI Game",
+    "description": "A Python implementation of the classic Four in a Row game featuring an AI opponent using the Minimax algorithm with Alpha-Beta pruning for optimal moves.",
+    "github": "https://github.com/ChiaraBenini/FourInARow",
+    "tags": [
+      "Python",
+      "AI",
+      "Game Development",
+      "Minimax"
+    ],
+    "icons": {
+      "Python": "devicon-python-plain",
+      "AI": "fas fa-robot",
+      "Game Development": "fas fa-gamepad",
+      "Minimax": "fas fa-brain"
+    }
+  },
+  {
+    "title": "Frozen Lake RL Solver",
+    "description": "A reinforcement learning solution for OpenAI's FrozenLake environment using Q-Learning, demonstrating fundamental AI concepts in a grid-world navigation challenge.",
+    "github": "https://github.com/ChiaraBenini/FrozenLake",
+    "tags": [
+      "Python",
+      "Reinforcement Learning",
+      "Q-Learning",
+      "OpenAI Gym"
+    ],
+    "icons": {
+      "Python": "devicon-python-plain",
+      "Reinforcement Learning": "fas fa-brain",
+      "Q-Learning": "fas fa-project-diagram",
+      "OpenAI Gym": "fas fa-snowflake"
+    }
+  }
+]
